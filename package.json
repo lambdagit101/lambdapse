@@ -16,6 +16,7 @@
   ],
   "author": "lambdaguy101",
   "license": "MIT",
+  "repository": "https://github.com/lambdagit101/lambdapse",
   "dependencies": {
     "@discordjs/opus": "^0.4.0",
     "discord-emotes": "^1.5.4",
