@@ -27,6 +27,7 @@ const cooldowns = new Discord.Collection();
 
 client.once('ready', () => {
 	console.log(messages.bot_ready);
+	client.user.setActivity(messages.status_text, { type: messages.status_type })
 });
 
 client.on('message', message => {
