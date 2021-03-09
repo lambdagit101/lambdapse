@@ -145,6 +145,8 @@ client.player
 
 // Do not touch this
 
-// client.user.setActivity(messages.status_text, { type: messages.status_type })
+client.user.setActivity(messages.status_text, { type: messages.status_type })
+  .then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
+  .catch(console.error);
 
 client.login(process.env.BOT_TOKEN);
