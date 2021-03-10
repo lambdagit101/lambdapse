@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'play',
   usage: '[search query]',
-  aliases: ['add', 'push'],
+  aliases: ['add', 'push', 'p'],
 	description: 'Adds a song in the queue.',
 	guildOnly: true,
 	async execute(client, message, args) {
