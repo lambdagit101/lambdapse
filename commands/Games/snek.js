@@ -2,6 +2,7 @@ const GameCord = require("gamecord-fork").djs;
 
 module.exports = {
 	name: 'snek',
+	guildOnly: true,
   aliases: ['snake'],
 	description: 'Starts a game of snek.',
 	async execute(client, message, args) {

@@ -16,7 +16,7 @@ module.exports = {
 
           message.channel.send(clean(evaled), {code:"xl"});
       } catch (err) {
-          message.channel.send(require('../../messages.json').bot_error.replace('(ERROR)'));
+          message.channel.send(require('../../messages.json').bot_error.replace('(ERROR)', err));
       }
     } else {
       await message.react('❌');
