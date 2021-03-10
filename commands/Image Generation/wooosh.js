@@ -2,7 +2,7 @@ const canvacord = require('canvacord');
 const Discord = require('discord.js');
 
 module.exports = {
-	name: 'hitler',
+	name: 'wooosh',
   guildOnly: false,
 	description: 'whoosh.',
 	aliases: ['whoosh'],
