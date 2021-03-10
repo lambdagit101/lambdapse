@@ -1,8 +1,9 @@
 module.exports = {
 	name: 'repeat',
-    guildOnly: true,
+  guildOnly: true,
 	description: 'Allows you to change the repeat mode of the currently playing song.',
-    usage: '[on/off]',
+  usage: '[on/off]',
+	guildOnly: true,
 	async execute(client, message, args) {
         	if (args[0].toLowerCase() == "on") {
             		client.player.setRepeatMode(message, true);
@@ -12,4 +13,4 @@ module.exports = {
             		message.channel.send(require('../../messages.json').music_repeatoff);
         	};
 	},
-}; 
+};

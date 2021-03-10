@@ -3,8 +3,8 @@ const Discord = require('discord.js');
 
 module.exports = {
 	name: 'hug',
-    usage: '[@user]',
-    guildOnly: true,
+  usage: '[@user]',
+  guildOnly: true,
 	description: 'Hugs someone. Virtually, of course.',
 	async execute(client, message, args) {
         	if (message.mentions.users.first() == message.author) return message.channel.send(require('../../messages.json').emote_hug_yourself);
@@ -20,4 +20,4 @@ module.exports = {
         		message.channel.send(embed);
             });
 	},
-}; 
+};

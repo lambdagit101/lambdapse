@@ -30,7 +30,7 @@ client.once('ready', () => {
 	client.user.setActivity(messages.status_text, { type: messages.status_type })
 });
 
-client.on('message', message => {
+client.on('message', async (message) => {
 	if (!message.content.startsWith(messages.bot_prefix) || message.author.bot) return;
 
 	const args = message.content.slice(messages.bot_prefix.length).trim().split(/ +/);

@@ -1,8 +1,9 @@
 module.exports = {
 	name: 'loop',
-    guildOnly: true,
+  guildOnly: true,
 	description: 'Allows you to change the loop mode of the queue.',
-    usage: '[on/off]',
+  usage: '[on/off]',
+	guildOnly: true,
 	async execute(client, message, args) {
         	if (args[0].toLowerCase() == "on") {
             		client.player.setLoopMode(message, true);
@@ -12,4 +13,4 @@ module.exports = {
             		message.channel.send(require('../../messages.json').music_loopoff);
         	};
 	},
-}; 
+};

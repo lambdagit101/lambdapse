@@ -1,10 +1,11 @@
 module.exports = {
 	name: 'clear',
-    guildOnly: true,
-    aliases: ['clearqueue'],
+  guildOnly: true,
+  aliases: ['clearqueue'],
 	description: 'Clears the queue.',
+	guildOnly: true,
 	async execute(client, message, args) {
-		client.player.clear(message);
-        message.channel.send('**:white_check_mark: | Queue has been cleared.**');
+		client.player.clearQueue(message);
+    message.channel.send(require('../../messages.json').music_queueclear);
 	},
-}; 
+};

@@ -2,9 +2,10 @@ const Discord = require('discord.js');
 
 module.exports = {
 	name: 'nowplaying',
-    guildOnly: true,
-    aliases: ['np'],
+  guildOnly: true,
+  aliases: ['np'],
 	description: 'Shows what\'s playing.',
+	guildOnly: true,
 	async execute(client, message, args) {
 		if (!message.member.voice.channel) return message.channel.send(require('../../messages.json').music_notconnected);
 
@@ -16,7 +17,7 @@ module.exports = {
         const filters = [];
 
         Object.keys(client.player.getQueue(message).filters).forEach((filterName) => client.player.getQueue(message).filters[filterName]) ? filters.push(filterName) : false;
-        
+
         const embed = new Discord.MessageEmbed()
         	.setTitle('Now playing')
             .setColor(require('../../messages.json').embed_color)
@@ -26,4 +27,4 @@ module.exports = {
             .setThumbnail(track.thumbnail)
         message.channel.send(embed);
 	},
-}; 
+};

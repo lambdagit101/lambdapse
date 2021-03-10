@@ -2,9 +2,10 @@ const Discord = require('discord.js');
 
 module.exports = {
 	name: 'queue',
-    guildOnly: true,
-    aliases: ['q'],
+  guildOnly: true,
+  aliases: ['q'],
 	description: 'Displays the queue.',
+	guildOnly: true,
 	async execute(client, message, args) {
 		if (!message.member.voice.channel) return message.channel.send(require('../../messages.json').music_notconnected);
 
@@ -14,8 +15,8 @@ module.exports = {
 
         let q = client.player.getQueue(message).tracks.map((tracks, i) => {
             return `${i === 0 ? '**Current:**' : `**${i+1}.**`} **\`${tracks.title}\`** : ${tracks.author}`
-        }).join('\n');  
-        
+        }).join('\n');
+
         const embed = new Discord.MessageEmbed()
             .setTitle(`Queue`)
             .setColor(require('../../messages.json').embed_color)
@@ -24,4 +25,4 @@ module.exports = {
             .setDescription(q)
         message.channel.send(embed);
 	},
-}; 
+};
