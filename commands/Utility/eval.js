@@ -3,7 +3,6 @@ module.exports = {
   guildOnly: false,
   aliases: ['dingus'],
 	description: 'Executes code.',
-	guildOnly: true,
 	async execute(client, message, args) {
 		if (message.author.id == require('../../messages.json').bot_owner) {
       await message.react('🍔');
@@ -23,7 +22,8 @@ module.exports = {
 
           message.channel.send(clean(evaled), {code:"xl"});
       } catch (err) {
-          message.channel.send(require('../../messages.json').bot_error.replace('(ERROR)', err));
+          await message.channel.send(require('../../messages.json').bot_error.replace('(ERROR)', err));
+          await message.react('🛑');
       }
     } else {
       await message.react('❌');

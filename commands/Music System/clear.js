@@ -1,6 +1,5 @@
 module.exports = {
 	name: 'clear',
-  guildOnly: true,
   aliases: ['clearqueue'],
 	description: 'Clears the queue.',
 	guildOnly: true,

@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 
 module.exports = {
 	name: 'queue',
-  guildOnly: true,
   aliases: ['q'],
 	description: 'Displays the queue.',
 	guildOnly: true,

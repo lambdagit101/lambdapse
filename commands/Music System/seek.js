@@ -1,6 +1,5 @@
 module.exports = {
 	name: 'seek',
-  guildOnly: true,
 	description: 'Seeks through the current song.',
   usage: '[time of the video in seconds]',
 	guildOnly: true,

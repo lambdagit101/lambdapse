@@ -1,6 +1,5 @@
 module.exports = {
 	name: 'loop',
-  guildOnly: true,
 	description: 'Allows you to change the loop mode of the queue.',
   usage: '[on/off]',
 	guildOnly: true,

@@ -1,6 +1,5 @@
 module.exports = {
 	name: 'repeat',
-  guildOnly: true,
 	description: 'Allows you to change the repeat mode of the currently playing song.',
   usage: '[on/off]',
 	guildOnly: true,

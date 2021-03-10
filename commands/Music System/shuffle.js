@@ -1,6 +1,5 @@
 module.exports = {
 	name: 'shuffle',
-  guildOnly: true,
   aliases: ['shufflequeue'],
 	description: 'Shuffles the queue',
 	guildOnly: true,
