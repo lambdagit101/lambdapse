@@ -5,11 +5,11 @@ module.exports = {
 	name: 'delete',
   guildOnly: false,
 	description: 'Delete.',
-  usage: '[@user (returns your avatar if nonexistant)] [true/false (dark mode) (defaults to false)]',
+  usage: '[@user (returns your avatar if nonexistant)]',
 	async execute(client, message, args) {
       var user = message.mentions.users.first() || message.author;
 	    let avatar = user.displayAvatarURL({ format: 'png', size: 1024 });
-	    let image = await canvacord.Canvas.delete(avatar, args[1] || false);
+	    let image = await canvacord.Canvas.delete(avatar, false);
 	    let attachment = new Discord.MessageAttachment(image, "delete.png");
 			const embed = new Discord.MessageEmbed()
 				.attachFiles({ attachment: image, name: "delete.png" })
