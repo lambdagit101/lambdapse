@@ -8,13 +8,13 @@ module.exports = {
   description: 'Returns information about an IP address.',
   usage: '[ip address]',
   async execute(client, message, args) {
-    const whois = await fetch(`http://ip-api.com/json/${message.content.split('!')[1]}?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,zip,timezone,currency,isp,org,as,mobile,proxy,hosting,query`).then(response => response.json());
+    const whois = await fetch(`http://ip-api.com/json/${args[0]}?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,zip,timezone,currency,isp,org,as,mobile,proxy,hosting,query`).then(response => response.json());
     if (whois.status == 'fail') {
         const embed = new Discord.MessageEmbed()
             .setColor('RED')
             .setFooter(require('../../messages.json').embed_footer.replace('(NAME)', message.author.username), message.author.avatarURL())
             .setTimestamp()
-            .setTitle(`Retrieving data for ${message.content.split('!')[1]} failed`)
+            .setTitle(`Retrieving data for ${args[0]} failed`)
             .setDescription(whois.message)
         message.channel.send(embed);
         return;
