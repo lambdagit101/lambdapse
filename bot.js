@@ -13,6 +13,12 @@ module.exports.client = client;
 const player = new Player(client);
 client.player = player;
 
+const { DiscordTogether } = require('discord-together');
+
+client.discordTogether = new DiscordTogether(client, {
+    token: process.env.BOT_TOKEN
+});
+
 const commandFolders = fs.readdirSync('./commands');
 
 for (const folder of commandFolders) {

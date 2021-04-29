@@ -22,6 +22,7 @@
     "canvacord": "^5.1.0",
     "discord-emotes": "^1.5.4",
     "discord-player": "^3.4.0",
+    "discord-together": "^1.0.13",
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.2.7",
