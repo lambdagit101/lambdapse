@@ -32,7 +32,6 @@
     "bot_usage1": "**You didn't provide any arguments**",
     "bot_usage2": "**\nThe proper usage would be: `(PREFIX)(COMMAND) (USAGE)`**",
     "bot_ready": "Ready for action, sir!",
-    "bot_prefix": "lb!",
     "bot_name": "Lambdapse",
     "bot_owner": "474918727507378198",
     "status_type": "PLAYING",

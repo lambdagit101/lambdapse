@@ -3,6 +3,7 @@ module.exports = {
   usage: '[search query]',
   aliases: ['add', 'push', 'p'],
 	description: 'Adds a song in the queue.',
+	emoji: ':play_pause:',
 	guildOnly: true,
 	async execute(client, message, args) {
 		client.player.play(message, args.join(' '));

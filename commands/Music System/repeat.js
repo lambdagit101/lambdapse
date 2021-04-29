@@ -3,6 +3,7 @@ module.exports = {
 	description: 'Allows you to change the repeat mode of the currently playing song.',
   usage: '[on/off]',
 	guildOnly: true,
+	emoji: ':repeat_one:',
 	async execute(client, message, args) {
         	if (args[0].toLowerCase() == "on") {
             		client.player.setRepeatMode(message, true);

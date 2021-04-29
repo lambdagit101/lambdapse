@@ -3,6 +3,7 @@ module.exports = {
   guildOnly: false,
   aliases: ['dingus'],
 	description: 'Executes code.',
+	emoji: ':computer:',
 	async execute(client, message, args) {
 		if (message.author.id == require('../../messages.json').bot_owner) {
       await message.react('🍔');

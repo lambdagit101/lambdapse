@@ -7,6 +7,7 @@ module.exports = {
   aliases: ['ip'],
   description: 'Returns information about an IP address.',
   usage: '[ip address]',
+  emoji: ':pager:',
   async execute(client, message, args) {
     const whois = await fetch(`http://ip-api.com/json/${args[0]}?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,zip,timezone,currency,isp,org,as,mobile,proxy,hosting,query`).then(response => response.json());
     if (whois.status == 'fail') {
@@ -26,14 +27,14 @@ module.exports = {
         .setColor(require('../../messages.json').embed_color)
         .addFields(
             { name: 'IP', value: whois.query, inline: true },
-            { name: 'Country', value: `${whois.country} (${whois.countryCode})`, inline: true },
-            { name: 'Region', value: `${whois.regionName} (${whois.region})`, inline: true },
-            { name: 'City', value: whois.city, inline: true },
-            { name: 'Zip code', value: whois.zip, inline: true },
-            { name: 'Time zone', value: whois.timezone, inline: true },
-            { name: 'Continent', value: `${whois.continent} (${whois.continentCode})`, inline: true },
-            { name: 'Currency', value: whois.currency, inline: true },
-            { name: 'ISP', value: whois.isp, inline: true }
+            { name: 'Country', value: `${whois.country || "None"} (${whois.countryCode || "None"})`, inline: true },
+            { name: 'Region', value: `${whois.regionName || "None"} (${whois.region || "None"})`, inline: true },
+            { name: 'City', value: `${whois.city || "None"}`, inline: true },
+            { name: 'Zip code', value: `${whois.zip || "None"}`, inline: true },
+            { name: 'Time zone', value: `${whois.timezone || "None"}`, inline: true },
+            { name: 'Continent', value: `${whois.continent || "None"} (${whois.continentCode || "None"})`, inline: true },
+            { name: 'Currency', value: `${whois.currency || "None"}`, inline: true },
+            { name: 'ISP', value: `${whois.isp || "None"}`, inline: true }
         )
         if (whois.proxy == true) {
             embed.addFields({ name: 'Additional information', value: 'This is a Tor/VPN/Proxy IP' })

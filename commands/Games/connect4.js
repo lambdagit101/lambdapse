@@ -5,6 +5,7 @@ module.exports = {
   guildOnly: true,
   aliases: ['c4', 'connectfour'],
 	description: 'Starts a Connect 4 game.',
+	emoji: ':control_knobs:',
 	async execute(client, message, args) {
         new GameCord.ConnectFour(message)
             .setTitle('Connect 4')

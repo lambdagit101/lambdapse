@@ -5,6 +5,7 @@ module.exports = {
   aliases: ['q'],
 	description: 'Displays the queue.',
 	guildOnly: true,
+	emoji: ':notepad_spiral:',
 	async execute(client, message, args) {
 		if (!message.member.voice.channel) return message.channel.send(require('../../messages.json').music_notconnected);
 

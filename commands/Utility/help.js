@@ -1,24 +1,25 @@
 const Discord = require('discord.js');
+const paginationEmbed = require('discord.js-pagination');
 
 module.exports = {
 	name: 'help',
 	description: `Did you just do **\`${require('../../messages.json').bot_prefix}help\`** on help?`,
 	usage: '[command name (optional)]',
+	emoji: ':bread:',
 	async execute(client, message, args) {
 		const data = [];
 		const { commands } = message.client;
 
 		if (!args.length) {
-			data.push('Here\'s a list of all my commands:');
-			data.push(commands.map(command => command.name).join(', '));
+			data.push('List of commands');
+			data.push(commands.map(command => `**${command.emoji || ':package:'}** ` + command.name).join('\n'));
 			data.push(`\nYou can send **\`${require('../../messages.json').bot_prefix}help [command name]\`** to get info on a specific command`);
-			
-            const listembed = new Discord.MessageEmbed()
-            	.setTitle('Help')
-                .setColor(require('../../messages.json').embed_color)
-                .setTimestamp()
-                .setFooter(require('../../messages.json').embed_footer.replace('(NAME)', message.author.username), message.author.avatarURL())
-                .setDescription(data.join('\n'))
+      const listembed = new Discord.MessageEmbed()
+          .setTitle('Help')
+          .setColor(require('../../messages.json').embed_color)
+          .setTimestamp()
+          .setFooter(require('../../messages.json').embed_footer.replace('(NAME)', message.author.username), message.author.avatarURL())
+          .setDescription(data.join('\n'))
 			return message.channel.send(listembed)
 		}
 

@@ -6,6 +6,7 @@ module.exports = {
   guildOnly: false,
 	description: 'Worse than Hitler.',
   usage: '[@user (returns your avatar if nonexistant)]',
+	emoji: ':flag_de:',
 	async execute(client, message, args) {
       var user = message.mentions.users.first() || message.author;
 	    let avatar = user.displayAvatarURL({ format: 'png', size: 1024 });

@@ -5,6 +5,7 @@ module.exports = {
 	guildOnly: true,
   aliases: ['snake'],
 	description: 'Starts a game of snek.',
+	emoji: ':snake:',
 	async execute(client, message, args) {
         new GameCord.SnakeGame(message)
             .setTitle('snek')

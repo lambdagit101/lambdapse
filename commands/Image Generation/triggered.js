@@ -7,6 +7,7 @@ module.exports = {
   aliases: ['trigger'],
 	description: 'TRIGGERED.',
   usage: '[@user (returns your avatar if nonexistant)]',
+	emoji: ':potato:',
 	async execute(client, message, args) {
       var user = message.mentions.users.first() || message.author;
 	    let avatar = user.displayAvatarURL({ dynamic: true, format: 'png', size: 1024 });

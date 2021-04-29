@@ -7,6 +7,7 @@ module.exports = {
 	description: 'whoosh.',
 	aliases: ['whoosh'],
   usage: '[@user (returns your avatar if nonexistant)]',
+	emoji: ':wind_blowing_face:',
 	async execute(client, message, args) {
       var user = message.mentions.users.first() || message.author;
 	    let avatar = user.displayAvatarURL({ format: 'png', size: 1024 });
