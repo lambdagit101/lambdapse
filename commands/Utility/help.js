@@ -29,7 +29,7 @@ module.exports = {
 			return message.channel.send('This command does not exist');
 		}
 
-		if (command.aliases) data.push(`**${command.emoji} ${command.name}**`);
+		data.push(`**${command.emoji || ':package:'} ${command.name}**`);
 		if (command.aliases) data.push(`**Aliases:** ${command.aliases.join(', ')}`);
 		if (command.description) data.push(`**Description:** ${command.description}`);
 		if (command.usage) data.push(`**Usage:** **\`${require('../../messages.json').bot_prefix}${command.name} ${command.usage}\`**`);
@@ -37,7 +37,6 @@ module.exports = {
 		data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
 
 		const comembed = new Discord.MessageEmbed()
-            	.setTitle(`Help - ${command.name}`)
               .setColor(require('../../messages.json').embed_color)
               .setTimestamp()
               .setFooter(require('../../messages.json').embed_footer.replace('(NAME)', message.author.username), message.author.avatarURL())
