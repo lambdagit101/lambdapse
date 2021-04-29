@@ -13,7 +13,7 @@ const modules = fs.readdirSync('./modules').filter(file => file.endsWith('.js'))
 
 for (const file of modules) {
 		const module = require(`./modules/${file}`);
-		console.log('[INIT]'.gray + ` ${module.name} - module loaded`);
+    console.log('[INIT]'.gray + ` ${module.name} - module loaded`);
 }
 
 const commandFolders = fs.readdirSync('./commands');

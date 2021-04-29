@@ -3,10 +3,14 @@ module.exports.name = "Discord Music System";
 const client = require('../bot.js').client;
 const messages = require('../messages.json');
 
+const Discord = require('discord.js');
+
 const { Player } = require("discord-player");
 
 const player = new Player(client);
 client.player = player;
+
+client.player.enableLive = true;
 
 // Music system messages
 
@@ -62,3 +66,5 @@ client.player
             message.channel.send(messages.bot_error.replace('(ERROR)', error))
     }
 })
+
+console.log('[INFO]'.blue + ' Discord Music System - Fully fledged music system');

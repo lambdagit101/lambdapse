@@ -8,3 +8,5 @@ const { DiscordTogether } = require('discord-together');
 client.discordTogether = new DiscordTogether(client, {
     token: process.env.BOT_TOKEN
 });
+
+console.log('[INFO]'.blue + ' Discord Activities - Allows people to watch YouTube or play games together');

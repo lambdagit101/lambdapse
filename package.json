@@ -22,13 +22,13 @@
     "canvacord": "^5.1.0",
     "colors": "^1.4.0",
     "discord-emotes": "^1.5.4",
-    "discord-player": "^3.4.0",
+    "discord-player": "^4.0.5",
     "discord-together": "^1.0.13",
-    "discord.js": "^12.5.1",
-    "discord.js-pagination": "^1.0.3",
+    "discord.js": "^12.5.3",
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.2.7",
     "gamecord-fork": "^1.0.12",
+    "irc": "^0.5.2",
     "node-fetch": "^2.6.1"
   }
 }
