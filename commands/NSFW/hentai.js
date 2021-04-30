@@ -67,7 +67,7 @@ module.exports = {
       default:
           gif = await fetch('https://nekos.life/api/v2/img/Random_hentai_gif').then(response => response.json());
 					embed.setImage(gif.url)
-					embed.setDescription(`NOTE: If you wish to get from a specific category, type something after the command.\nDo **`${require("../../messages.json").bot_prefix}hentai help`** to see all categories\n`)
+					embed.setDescription(`NOTE: If you wish to get from a specific category, type something after the command.\nDo **\`${require("../../messages.json").bot_prefix}hentai help\`** to see all categories\n`)
     }
 		message.channel.send(embed);
 	},
