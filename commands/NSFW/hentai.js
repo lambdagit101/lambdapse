@@ -11,7 +11,7 @@ module.exports = {
     if (!message.channel.nsfw) return message.channel.send(require('../../messages.json').no_nsfw);
     var gif = "";
 		const embed = new Discord.MessageEmbed()
-				.setTitle(require("../../messages.json").nsfw_hentaihere.replace(/(TAG)/g, `${message.author.tag}`))
+				.setTitle(require("../../messages.json").nsfw_hentaihere.replace("(TAG)", `${message.author.tag}`))
 				.setColor(require('../../messages.json').embed_color)
 				.setFooter(require('../../messages.json').embed_footer.replace('(NAME)', message.author.username), message.author.avatarURL())
 				.setTimestamp()
