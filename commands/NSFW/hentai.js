@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 module.exports = {
 	name: 'hentai',
 	description: 'Fuck real women, if they ever existed',
-	emoji: "<:837832601124339732:>",
+	emoji: "jan",
 	usage: '[category (optional)/help]',
 	cooldown: 5,
 	async execute(client, message, args) {
