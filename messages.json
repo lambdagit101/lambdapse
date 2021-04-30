@@ -50,5 +50,7 @@
     "emote_pat_yourself": "Patting yourself is quite an achievement.",
     "emote_slap_yourself": "Why would you slap yourself?",
     "embed_footer": "Executed by (NAME)",
-    "embed_color": "GREEN"
+    "embed_color": "GREEN",
+    "nsfw_hentaihere": "Here's your hentai, (TAG)",
+    "no_nsfw": "NSFW is not allowed in a non-NSFW channel."
 }
