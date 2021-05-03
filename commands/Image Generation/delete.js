@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 
 module.exports = {
 	name: 'delete',
+	alias: ["trash"],
   guildOnly: false,
 	description: 'Delete.',
   usage: '[@user (returns your avatar if nonexistant)]',
