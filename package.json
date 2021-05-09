@@ -27,7 +27,6 @@
     "discord.js": "^12.5.3",
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.2.7",
-    "gamecord-fork": "^1.0.12",
     "irc": "^0.5.2",
     "node-fetch": "^2.6.1"
   }
