@@ -23,7 +23,7 @@
     "colors": "^1.4.0",
     "discord-emotes": "^1.5.4",
     "discord-player": "^4.0.5",
-    "discord-together": "^1.0.13",
+    "discord-together": "^1.1.1",
     "discord.js": "^12.5.3",
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.2.7",
