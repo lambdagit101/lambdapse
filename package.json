@@ -25,6 +25,7 @@
     "discord-player": "^4.0.5",
     "discord-together": "^1.1.1",
     "discord.js": "^12.5.3",
+    "discord.js-pagination": "^1.0.3",
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.2.7",
     "irc": "^0.5.2",
