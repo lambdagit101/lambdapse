@@ -34,6 +34,7 @@
     "bot_ready": "Ready for action, sir!",
     "bot_name": "Lambdapse",
     "bot_owner": "474918727507378198",
+    "bot_owner_username": "lambdaguy101",
     "status_type": "PLAYING",
     "status_text": "Discord Poker Night | lb!help",
     "bot_prefix": "lb!",
@@ -52,5 +53,10 @@
     "embed_footer": "Executed by (NAME)",
     "embed_color": "GREEN",
     "nsfw_hentaihere": "Here's your hentai, (TAG)",
-    "no_nsfw": "NSFW is not allowed in a non-NSFW channel."
+    "no_nsfw": "NSFW is not allowed in a non-NSFW channel.",
+    "credits_title": "About (NAME)",
+    "credits_madeby": "Made by (NAME)",
+    "credits_specialthanksto": "Special thanks to (THANKS)",
+    "credits_thanks": ["DavidJoacaRo"],
+    "credits_extramessage": "Made in Romania :flag_ro:"
 }
