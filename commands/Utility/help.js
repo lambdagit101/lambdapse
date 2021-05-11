@@ -1,5 +1,5 @@
 // Couldn't prevent myself
-const paginationEmbed = require('discord.js-pagination');
+const paginationEmbed = require('discord.js-pagination-fork');
 const Discord = require('discord.js');
 const path = require('path');
 const fs = require('fs');
