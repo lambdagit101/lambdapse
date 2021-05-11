@@ -48,7 +48,7 @@ for (const folder of commandFoldersForHelp) {
 	data.push(`**${path.basename(folder)}**`);
 	for (const file of commandFiles) {
 		const command = require(`./commands/${folder}/${file}`);
-		data.push(`${`**${command.emoji}**` || ":package:"} ${command.name}`);
+		data.push(`**${command.emoji || ":package:"}** ${command.name}`);
 	}
 	embed.setDescription(data);
 	client.helpPages.push(embed);
