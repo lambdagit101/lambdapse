@@ -1,4 +1,8 @@
+// Couldn't prevent myself
+const paginationEmbed = require('discord.js-pagination');
 const Discord = require('discord.js');
+const path = require('path');
+const fs = require('fs');
 
 module.exports = {
 	name: 'help',
@@ -10,16 +14,8 @@ module.exports = {
 		const { commands } = message.client;
 
 		if (!args.length) {
-			data.push('List of commands');
-			data.push(commands.map(command => `**${command.emoji || ':package:'}** ` + command.name).join('\n'));
-			data.push(`\nYou can send **\`${require('../../messages.json').bot_prefix}help [command name]\`** to get info on a specific command`);
-      const listembed = new Discord.MessageEmbed()
-          .setTitle('Help')
-          .setColor(require('../../messages.json').embed_color)
-          .setTimestamp()
-          .setFooter(require('../../messages.json').embed_footer.replace('(NAME)', message.author.username), message.author.avatarURL())
-          .setDescription(data.join('\n'))
-			return message.channel.send(listembed)
+			paginationEmbed(message, client.helpPages);
+			return;
 		}
 
 		const name = args[0].toLowerCase();

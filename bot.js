@@ -34,6 +34,26 @@ for (const folder of commandFolders) {
 }
 
 // Go ahead, touch these
+client.helpPages = [];
+const commandFoldersForHelp = fs.readdirSync('./commands');
+const path = require('path');
+
+for (const folder of commandFoldersForHelp) {
+	const data = [];
+	var embed = new Discord.MessageEmbed()
+		.setTitle('Help')
+		.setColor(require('./messages.json').embed_color)
+		.setTimestamp()
+	const commandFiles = fs.readdirSync(`./commands/${folder}`);
+	data.push(`**${path.basename(folder)}**`);
+	for (const file of commandFiles) {
+		const command = require(`./commands/${folder}/${file}`);
+		data.push(`${`**${command.emoji}**` || ":package:"} ${command.name}`);
+	}
+	embed.setDescription(data);
+	client.helpPages.push(embed);
+}
+
 const cooldowns = new Discord.Collection();
 
 client.once('ready', () => {
