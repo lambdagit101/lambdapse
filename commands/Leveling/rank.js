@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const canvacord = require('canvacord');
 const { Levels, enabled } = require('../../modules/leveling.js');
 
 module.exports = {
