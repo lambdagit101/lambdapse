@@ -18,7 +18,7 @@ var colors = require('colors');
 
 const Levels = require("discord-xp");
 Levels.setURL(process.env.LEVEL_DBURL);
-modules.exports.Levels = Levels;
+module.exports.Levels = Levels;
 module.exports.enabled = enabled;
 
 if (!enabled) return console.log('[INFO]'.blue + ' Leveling module is ' + 'DISABLED'.red);
