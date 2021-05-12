@@ -20,6 +20,7 @@ const Levels = require("discord-xp");
 Levels.setURL(process.env.LEVEL_DBURL);
 module.exports.Levels = Levels;
 module.exports.enabled = enabled;
+const client = require('../bot.js').client;
 
 if (!enabled) return console.log('[INFO]'.blue + ' Leveling module is ' + 'DISABLED'.red);
 if (enabled) console.log('[INFO]'.blue + ' Leveling module is ' + 'ENABLED'.green);
