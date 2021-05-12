@@ -21,7 +21,7 @@ module.exports = {
 		    .setCurrentXP(user.xp)
 		    .setRequiredXP(Levels.xpFor(user.level + 1))
 				.setLevel(user.level)
-				.setRank(user.position)
+//			.setRank(user.position)
 		    .setStatus(target.presence.status)
 		    .setUsername(target.username)
 		    .setDiscriminator(target.discriminator);
