@@ -58,5 +58,5 @@
     "credits_madeby": "Made by (NAME)",
     "credits_specialthanksto": "Special thanks to (THANKS)",
     "credits_thanks": ["DavidJoacaRo"],
-    "credits_extramessage": "Made in Romania :flag_ro:"
+    "credits_extramessage": "The programs included with the Debian GNU/Linux system are free software;\nthe exact distribution terms for each program are described in the\nindividual files in /usr/share/doc/*/copyright.\n\nDebian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent\npermitted by applicable law."
 }
