@@ -19,7 +19,7 @@ module.exports = {
 		const rank = new canvacord.Rank()
 		    .setAvatar(target.displayAvatarURL({ size: 1024, format: "png" }))
 		    .setCurrentXP(user.xp)
-		    .setRequiredXP(user.xpFor(user.level + 1))
+		    .setRequiredXP(Levels.xpFor(user.level + 1))
 				.setLevel(user.level)
 				.setRank(user.position)
 		    .setStatus(target.presence.status)
