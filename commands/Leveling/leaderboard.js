@@ -15,14 +15,14 @@ module.exports = {
 
 		const leaderboard = await Levels.computeLeaderboard(client, rawLeaderboard, true);
 
-		const lb = leaderboard.map(e => `**${e.position}.** \`${e.tag}\` - **Level:** **${e.level}** - **XP:** ${e.xp.toLocaleString()}`);
+		const lb = leaderboard.map(e => `**${e.position}.** \`${e.username}#${e.discriminator}\` - **Level:** **${e.level}** - **XP:** ${e.xp.toLocaleString()}`);
 
 		const embed = new Discord.MessageEmbed()
 			.setTitle("Leaderboard")
 			.setColor(require('../../messages.json').embed_color)
 			.setFooter(require('../../messages.json').embed_footer.replace('(NAME)', message.author.username), message.author.avatarURL())
 			.setTimestamp()
-			.setDescription(lb.join('\`n'))
+			.setDescription(lb.join('\n'))
 		message.channel.send(embed);
 	},
 };
