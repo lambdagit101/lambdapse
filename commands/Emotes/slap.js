@@ -1,4 +1,3 @@
-const emotes = require("discord-emotes");
 const Discord = require('discord.js');
 
 module.exports = {
