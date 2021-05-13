@@ -7,6 +7,7 @@ module.exports = {
 	aliases: ["level"],
 	description: `Shows your level.`,
 	emoji: ':gem:',
+        guildOnly: true,
 	async execute(client, message, args) {
 		if (!enabled) return message.channel.send(require('../../messages.json').level_disabled);
 
