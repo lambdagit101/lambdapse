@@ -16,7 +16,7 @@ module.exports = {
                 .setColor(require('../../messages.json').embed_color)
                 .setTimestamp()
                 .setFooter(require('../../messages.json').embed_footer.replace('(NAME)', message.author.username), message.author.avatarURL())
-					gif = await fetch('https://nekos.life/api/v2/img/hug').then(response => response.json());
+					let gif = await fetch('https://nekos.life/api/v2/img/hug').then(response => response.json());
 			    embed.setImage(gif.url)
         	message.channel.send(embed);
 	},
