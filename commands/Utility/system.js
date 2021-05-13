@@ -11,7 +11,7 @@ module.exports = {
 			.setColor(require('../../messages.json').embed_color)
 			.setTimestamp()
 			.setFooter(require('../../messages.json').embed_footer.replace('(NAME)', message.author.username), message.author.avatarURL())
-			.setTitle(require('../../messages.json').credits_title.replace('(NAME)', require('../../messages.json').bot_name))
+			.setTitle("System Information")
 			.setDescription(`**\`${os.userInfo().username}@${os.hostname()}\`**\n**Platform: \`${os.platform()}\`**\n**Architecture: \`${os.arch()}\`**\n**RAM: \`${os.freemem()}B/${os.totalmem()}B\`**`)
 		message.channel.send(embed);
 	},
