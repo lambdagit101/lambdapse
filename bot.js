@@ -40,7 +40,7 @@ const path = require('path');
 
 for (const folder of commandFoldersForHelp) {
 	const data = [];
-	var embed = new Discord.MessageEmbed()
+ 	let embed = new Discord.MessageEmbed()
 		.setTitle('Help')
 		.setColor(require('./messages.json').embed_color)
 		.setTimestamp()

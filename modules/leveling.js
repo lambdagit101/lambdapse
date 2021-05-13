@@ -26,7 +26,7 @@ const mee6cooldown = 60000;
 
 // Do not touch the things below
 
-var colors = require('colors');
+const colors = require('colors');
 module.exports.enabled = enabled;
 if (!enabled) return console.log('[INFO]'.blue + ' Leveling module is ' + 'DISABLED'.red);
 if (enabled) console.log('[INFO]'.blue + ' Leveling module is ' + 'ENABLED'.green);
@@ -41,7 +41,7 @@ client.on("message", async (message) => {
   if (message.content.startsWith(require('../messages.json').bot_prefix)) return;
 
   if (mee6leveling && !message.author.cooldown) {
-    message.author.cooldown = true
+    message.author.cooldown = true;
     const randomAmountOfXp = Math.floor(Math.random() * (maxxp - minxp) + minxp);
     const hasLeveledUp = await Levels.appendXp(message.author.id, message.guild.id, randomAmountOfXp);
     if (hasLeveledUp) {
@@ -53,7 +53,7 @@ client.on("message", async (message) => {
       }
     }
     setTimeout(function() {
-      message.author.cooldown = false
+      message.author.cooldown = false;
     }, mee6cooldown)
   } else if (!mee6leveling) {
     const randomAmountOfXp = Math.floor(Math.random() * (maxxp - minxp) + minxp);

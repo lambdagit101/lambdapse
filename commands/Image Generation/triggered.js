@@ -9,13 +9,13 @@ module.exports = {
   usage: '[@user (returns your avatar if nonexistant)]',
 	emoji: ':potato:',
 	async execute(client, message, args) {
-      var user = message.mentions.users.first() || message.author;
-	    let avatar = user.displayAvatarURL({ dynamic: true, format: 'png', size: 1024 });
-	    let image = await canvacord.Canvas.trigger(avatar);
-	    let attachment = new Discord.MessageAttachment(image, "triggered.gif");
+      const user = message.mentions.users.first() || message.author;
+	    const avatar = user.displayAvatarURL({ dynamic: true, format: 'png', size: 1024 });
+	    const image = await canvacord.Canvas.trigger(avatar);
+	    const attachment = new Discord.MessageAttachment(image, 'triggered.gif');
 			const embed = new Discord.MessageEmbed()
-				.attachFiles({ attachment: image, name: "triggered.gif" })
-				.setImage(`attachment://triggered.gif`)
+				.attachFiles({ attachment: image, name: 'triggered.gif' })
+				.setImage('attachment://triggered.gif')
         .setColor(require('../../messages.json').embed_color)
         .setFooter(require('../../messages.json').embed_footer.replace('(NAME)', message.author.username), message.author.avatarURL())
         .setTimestamp()

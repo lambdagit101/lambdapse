@@ -26,17 +26,17 @@ module.exports = {
 		}
 
 		data.push(`**${command.emoji || ':package:'} ${command.name}**`);
-		if (command.aliases) data.push(`**Aliases:** ${command.aliases.join(', ')}`);
-		if (command.description) data.push(`**Description:** ${command.description}`);
-		if (command.usage) data.push(`**Usage:** **\`${require('../../messages.json').bot_prefix}${command.name} ${command.usage}\`**`);
+		if (command.aliases) data.push(`**${require('../../messages.json').bot_aliases}:** ${command.aliases.join(', ')}`);
+		if (command.description) data.push(`**${require('../../messages.json').bot_description}:** ${command.description}`);
+		if (command.usage) data.push(`**${require('../../messages.json').bot_usage}:** **\`${require('../../messages.json').bot_prefix}${command.name} ${command.usage}\`**`);
 
 		data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
 
 		const comembed = new Discord.MessageEmbed()
-              .setColor(require('../../messages.json').embed_color)
-              .setTimestamp()
-              .setFooter(require('../../messages.json').embed_footer.replace('(NAME)', message.author.username), message.author.avatarURL())
-              .setDescription(data.join('\n'))
-			return message.channel.send(comembed)
+    	.setColor(require('../../messages.json').embed_color)
+    	.setTimestamp()
+    	.setFooter(require('../../messages.json').embed_footer.replace('(NAME)', message.author.username), message.author.avatarURL())
+    	.setDescription(data.join('\n'))
+		return message.channel.send(comembed);
 	},
 };
