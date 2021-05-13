@@ -12,7 +12,7 @@ module.exports = {
 			.setTimestamp()
 			.setFooter(require('../../messages.json').embed_footer.replace('(NAME)', message.author.username), message.author.avatarURL())
 			.setTitle("System Information")
-			.setDescription(`**\`${os.userInfo().username}@${os.hostname()}\`**\n**Platform: \`${os.platform()}\`**\n**Architecture: \`${os.arch()}\`**\n**RAM: \`${os.freemem()}B/${os.totalmem()}B\`**`)
+			.setDescription(`**\`${os.userInfo().username}@${os.hostname()}\`**\n**Platform: \`${os.platform()}\`**\n**Architecture: \`${os.arch()}\`**\n**RAM: \`${os.freemem() / 1024 / 1024} MB/${os.totalmem() / 1024 / 1024} MB\`**`)
 		message.channel.send(embed);
 	},
 };
