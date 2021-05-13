@@ -24,7 +24,6 @@ const mee6leveling = true;
 const mee6cooldown = 60000;
 
 // Do not touch the things below
-// skybird2333 chinaman
 
 var colors = require('colors');
 module.exports.enabled = enabled;
