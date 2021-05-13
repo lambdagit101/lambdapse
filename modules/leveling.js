@@ -38,6 +38,7 @@ const client = require('../bot.js').client;
 client.on("message", async (message) => {
   if (!message.guild) return;
   if (message.author.bot) return;
+  if (message.content.startsWith(require('../messages.json').bot_prefix)) return;
 
   if (mee6leveling && !message.author.cooldown) {
     message.author.cooldown = true
