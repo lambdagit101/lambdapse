@@ -12,7 +12,6 @@ module.exports = {
 					const embed = new Discord.MessageEmbed()
             		.setTitle(`${message.author.username} pats ${message.mentions.users.first().username}`)
                 .setDescription(args.slice(1, args.length).join(' ') || require('../../messages.json').emote_pat)
-            		.setImage(gif)
                 .setColor(require('../../messages.json').embed_color)
                 .setTimestamp()
                 .setFooter(require('../../messages.json').embed_footer.replace('(NAME)', message.author.username), message.author.avatarURL())
