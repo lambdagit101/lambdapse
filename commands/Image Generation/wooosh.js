@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 module.exports = {
 	name: 'wooosh',
   guildOnly: false,
-	description: 'whoosh.',
+	description: 'wooosh.',
 	aliases: ['whoosh'],
   usage: '[@user (returns your avatar if nonexistant)]',
 	emoji: ':wind_blowing_face:',
