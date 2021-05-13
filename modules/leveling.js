@@ -18,6 +18,7 @@ const minxp = 15;
 const maxxp = 25;
 
 // Enable MEE6 type leveling? It will have a cooldown after every message
+// This prevents XP earned from spamming the bot and balances the "level economy" more
 const mee6leveling = true;
 
 // The MEE6 type leveling cooldown in miliseconds for when you can earn XP. Not required if above is false

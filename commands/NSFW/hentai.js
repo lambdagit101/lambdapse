@@ -61,13 +61,13 @@ module.exports = {
           embed.setImage(gif.url)
       break;
       case "help":
-					embed.setTitle("Available categories")
-					embed.setDescription("You can also use the command with no arguments)\n```neko\ncum\nsolo\nanal\nyuri\nblowjob - bj\npussy\nclassic\nfutanari - futa\n```")
+					embed.setTitle(require("../../messages.json").nsfw_availablecategories)
+					embed.setDescription(require("../../messages.json").nsfw_categorieshentai)
       break;
       default:
           gif = await fetch('https://nekos.life/api/v2/img/Random_hentai_gif').then(response => response.json());
 					embed.setImage(gif.url)
-					embed.setDescription(`NOTE: If you wish to get from a specific category, type something after the command.\nDo **\`${require("../../messages.json").bot_prefix}hentai help\`** to see all categories\n`)
+					embed.setDescription(require('../../messages.json').nsfw_hentainocategory.replace('(PREFIX)', require("../../messages.json").bot_prefix))
     }
 		message.channel.send(embed);
 	},
