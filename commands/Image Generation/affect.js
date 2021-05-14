@@ -13,7 +13,7 @@ module.exports = {
 	    const image = await canvacord.Canvas.affect(avatar);
 	    const attachment = new Discord.MessageAttachment(image, 'affect.png');
 			const embed = new Discord.MessageEmbed()
-				.attachFiles({ attachment: image, name: "affect.png" })
+				.attachFiles({ attachment: image, name: 'affect.png' })
 				.setImage('attachment://affect.png')
         .setColor(require('../../messages.json').embed_color)
         .setFooter(require('../../messages.json').embed_footer.replace('(NAME)', message.author.username), message.author.avatarURL())
