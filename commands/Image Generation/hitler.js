@@ -9,7 +9,7 @@ module.exports = {
 	emoji: ':flag_de:',
 	async execute(client, message, args) {
       const user = message.mentions.users.first() || message.author;
-	    const avatar = user.displayAvatarURL({ format: 'png', size: 1024 });
+	    const avatar = user.displayAvatarURL({ format: 'png', size: 1024, dynamic: true });
 	    const image = await canvacord.Canvas.hitler(avatar);
 	    const attachment = new Discord.MessageAttachment(image, 'hitler.png');
 			const embed = new Discord.MessageEmbed()

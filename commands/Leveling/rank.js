@@ -15,7 +15,7 @@ module.exports = {
 		const user = await Levels.fetch(target.id, message.guild.id);
 		if (!user) return message.channel.send(require('../../messages.json').level_noxp);
 		const rank = new canvacord.Rank()
-		    .setAvatar(target.displayAvatarURL({ size: 1024, format: "png" }))
+		    .setAvatar(target.displayAvatarURL({ size: 1024, format: "png", dynamic: true }))
 		    .setCurrentXP(user.xp)
 		    .setRequiredXP(Levels.xpFor(user.level + 1))
 				.setLevel(user.level)
