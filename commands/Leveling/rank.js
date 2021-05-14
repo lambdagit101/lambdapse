@@ -27,6 +27,7 @@ module.exports = {
 		    .then(data => {
 		        const attachment = new Discord.MessageAttachment(data, "rankcard.png");
 						const embed = new Discord.MessageEmbed()
+							.attachFiles(['attachment://rankcard.png'])
 							.setImage('attachment://rankcard.png')
 			        .setColor(require('../../messages.json').embed_color)
 		        message.channel.send(embed);
