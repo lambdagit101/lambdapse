@@ -25,8 +25,11 @@ module.exports = {
 		    .setDiscriminator(target.discriminator);
 		rank.build()
 		    .then(data => {
-		        const attachment = new Discord.MessageAttachment(data, "RankCard.png");
-		        message.channel.send(attachment);
+		        const attachment = new Discord.MessageAttachment(data, "rankcard.png");
+						const embed = new Discord.MessageEmbed()
+							.setImage('attachment://rankcard.png')
+			        .setColor(require('../../messages.json').embed_color)
+		        message.channel.send(embed);
 		    });
 	},
 };
