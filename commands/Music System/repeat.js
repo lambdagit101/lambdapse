@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'repeat',
 	description: 'Allows you to change the repeat mode of the currently playing song.',
-  usage: '[on/off]',
+	usage: '[on/off]',
 	guildOnly: true,
 	emoji: ':repeat_one:',
 	async execute(client, message, args) {

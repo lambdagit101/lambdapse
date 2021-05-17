@@ -35,7 +35,7 @@ if (enabled == true) {
   const colors = require('colors');
   console.log('[INFO]'.blue + ' IRC module is ' + 'ENABLED'.green);
   const irc = require('irc');
-  const discordclient = require('../index.js').client;
+  const discordclient = require('../shard.js').client;
 
   const ircclient = new irc.Client(server, nick, {
     channels: channel,

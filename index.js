@@ -2,7 +2,7 @@
 require('dotenv').config();
 const colors = require('colors');
 const { ShardingManager } = require('discord.js');
-const manager = new ShardingManager('./bot.js', { token: process.env.BOT_TOKEN });
+const manager = new ShardingManager('./shard.js', { token: process.env.BOT_TOKEN });
 
 // Starting the created shard
 manager.on('shardCreate', shard => console.log('[STATUS]'.green + ` Launched shard ${shard.id}`));

@@ -33,10 +33,10 @@ module.exports = {
 		data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
 
 		const comembed = new Discord.MessageEmbed()
-    	.setColor(require('../../messages.json').embed_color)
-    	.setTimestamp()
-    	.setFooter(require('../../messages.json').embed_footer.replace('(NAME)', message.author.username), message.author.avatarURL())
-    	.setDescription(data.join('\n'))
+			.setColor(require('../../messages.json').embed_color)
+			.setTimestamp()
+			.setFooter(require('../../messages.json').embed_footer.replace('(NAME)', message.author.username), message.author.avatarURL())
+			.setDescription(data.join('\n'))
 		return message.channel.send(comembed);
 	},
 };

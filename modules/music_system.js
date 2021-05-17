@@ -1,6 +1,6 @@
 module.exports.name = "Discord Music System";
 
-const client = require('../bot.js').client;
+const client = require('../shard.js').client;
 const messages = require('../messages.json');
 
 const Discord = require('discord.js');

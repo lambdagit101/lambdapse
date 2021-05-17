@@ -37,11 +37,11 @@ module.exports = {
             { name: 'ISP', value: `${whois.isp || "None"}`, inline: true }
         )
         if (whois.proxy == true) {
-            embed.addFields({ name: 'Additional information', value: 'This is a Tor/VPN/Proxy IP' })
+          embed.addFields({ name: 'Additional information', value: 'This is a Tor/VPN/Proxy IP' })
         } else if (whois.mobile == true) {
-            embed.addFields({ name: 'Additional information', value: 'This IP is used by mobile data' })
+          embed.addFields({ name: 'Additional information', value: 'This IP is used by mobile data' })
         } else if (whois.hosting == true) {
-            embed.addFields({ name: 'Additional information', value: 'This is a hosting service/datacenter IP' })
+          embed.addFields({ name: 'Additional information', value: 'This is a hosting service/datacenter IP' })
         }
     message.channel.send(embed);
   },

@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'play',
-  usage: '[search query]',
-  aliases: ['add', 'push', 'p'],
+	usage: '[search query]',
+	aliases: ['add', 'push', 'p'],
 	description: 'Adds a song in the queue.',
 	emoji: ':play_pause:',
 	guildOnly: true,

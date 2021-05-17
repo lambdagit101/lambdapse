@@ -33,7 +33,7 @@ if (enabled) console.log('[INFO]'.blue + ' Leveling module is ' + 'ENABLED'.gree
 const Levels = require("discord-xp");
 Levels.setURL(process.env.LEVEL_DBURL);
 module.exports.Levels = Levels;
-const client = require('../bot.js').client;
+const client = require('../shard.js').client;
 
 client.on("message", async (message) => {
   if (!message.guild) return;
