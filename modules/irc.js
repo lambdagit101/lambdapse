@@ -38,7 +38,7 @@ if (enabled == true) {
   const discordclient = require('../index.js').client;
 
   const ircclient = new irc.Client(server, nick, {
-      channels: channel,
+    channels: channel,
   });
 
   ircclient.addListener('message', function (from, to, message) {

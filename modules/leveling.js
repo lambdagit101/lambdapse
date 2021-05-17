@@ -40,8 +40,8 @@ client.on("message", async (message) => {
   if (message.author.bot) return;
   if (message.content.startsWith(require('../messages.json').bot_prefix)) return;
 
-  if (mee6leveling && !message.author.cooldown) {
-    message.author.cooldown = true;
+  if (mee6leveling && !message.member.cooldown) {
+    message.member.cooldown = true;
     const randomAmountOfXp = Math.floor(Math.random() * (maxxp - minxp) + minxp);
     const hasLeveledUp = await Levels.appendXp(message.author.id, message.guild.id, randomAmountOfXp);
     if (hasLeveledUp) {
@@ -53,7 +53,7 @@ client.on("message", async (message) => {
       }
     }
     setTimeout(function() {
-      message.author.cooldown = false;
+      message.member.cooldown = false;
     }, mee6cooldown)
   } else if (!mee6leveling) {
     const randomAmountOfXp = Math.floor(Math.random() * (maxxp - minxp) + minxp);
@@ -66,7 +66,7 @@ client.on("message", async (message) => {
         channel.send(theactualmessage.replace('(TAG)', message.author.tag).replace('(LEVEL)', user.level));
       }
     }
-  } else if (mee6leveling && message.author.cooldown) {
+  } else if (mee6leveling && message.member.cooldown) {
     return;
   }
 });
