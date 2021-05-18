@@ -7,6 +7,7 @@ module.exports = {
   description: 'Sus.',
   emoji: ':no_entry:',
   async execute(client, message, args) {
+    if (require('../../modules/activities.js').enabled == false) return message.channel.send(require('../../messages.json').activity_disabled);
     if (!message.member.voice.channel) return message.channel.send(require('../../messages.json').music_notconnected);
       client.discordTogether.createTogetherCode(message.member.voice.channelID, 'betrayal').then(async invite => {
         const embed = new Discord.MessageEmbed()

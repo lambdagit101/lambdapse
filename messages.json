@@ -73,5 +73,6 @@
     "level_noxp": ":x: **User has no XP**",
     "level_disabled": ":information_source: **The XP system is disabled**",
     "level_noboard": ":information_source: **Leaderboard's empty. This is your chance!**",
-    "activity_clickhere": "Click here to start"
+    "activity_clickhere": "Click here to start",
+    "activity_disabled": ":information_source: **Discord Activities are disabled**"
 }
