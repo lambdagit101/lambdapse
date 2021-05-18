@@ -1,5 +1,14 @@
 module.exports.name = "Discord Music System";
 
+// Disable music system if this is false
+const enabled = true;
+
+// Do not touch anything
+module.exports.enabled = enabled;
+
+if (enabled == false) return console.log('[INFO]'.blue + ' Discord Music System is ' + 'DISABLED'.red);
+if (enabled == true) console.log('[INFO]'.blue + ' Discord Music System is ' + 'ENABLED'.green);
+
 const client = require('../shard.js').client;
 const messages = require('../messages.json');
 
@@ -66,5 +75,3 @@ client.player
             message.channel.send(messages.bot_error.replace('(ERROR)', error))
     }
 })
-
-console.log('[INFO]'.blue + ' Discord Music System - Fully fledged music system');

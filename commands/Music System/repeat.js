@@ -5,6 +5,7 @@ module.exports = {
 	guildOnly: true,
 	emoji: ':repeat_one:',
 	async execute(client, message, args) {
+		if (require('../../modules/music_system.js').enabled == false) return message.channel.send(require('../../messages.json').music_disabled);
 		if (args[0].toLowerCase() == "on") {
 			client.player.setRepeatMode(message, true);
 			message.channel.send(require('../../messages.json').music_repeaton);

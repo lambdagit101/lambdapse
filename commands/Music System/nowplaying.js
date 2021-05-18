@@ -7,6 +7,7 @@ module.exports = {
 	guildOnly: true,
 	emoji: ':notepad_spiral:',
 	async execute(client, message, args) {
+		if (require('../../modules/music_system.js').enabled == false) return message.channel.send(require('../../messages.json').music_disabled);
 		if (!message.member.voice.channel) return message.channel.send(require('../../messages.json').music_notconnected);
 		if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(require('../../messages.json').music_notsamevc);
 		if (!client.player.getQueue(message)) return message.channel.send(require('../../messages.json').music_queueempty);
