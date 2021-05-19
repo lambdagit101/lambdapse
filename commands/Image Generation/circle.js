@@ -3,7 +3,6 @@ const Discord = require('discord.js');
 
 module.exports = {
 	name: 'circle',
-	guildOnly: false,
 	description: 'Creates a circular image.',
 	usage: '[@user (returns your avatar if nonexistant)]',
 	async execute(client, message, args) {

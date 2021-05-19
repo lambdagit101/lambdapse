@@ -3,7 +3,6 @@ const Discord = require('discord.js');
 
 module.exports = {
 	name: 'clyde',
-	guildOnly: false,
 	description: 'Clyde.',
 	usage: '[text]',
 	async execute(client, message, args) {

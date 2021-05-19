@@ -3,7 +3,6 @@ const Discord = require('discord.js');
 
 module.exports = {
 	name: 'affect',
-	guildOnly: false,
 	aliases: ['drink'],
 	description: 'No, it does not affect my baby.',
 	usage: '[@user (returns your avatar if nonexistant)]',

@@ -3,7 +3,6 @@ const Discord = require('discord.js');
 
 module.exports = {
 	name: 'triggered',
-	guildOnly: false,
 	aliases: ['trigger'],
 	description: 'TRIGGERED.',
 	usage: '[@user (returns your avatar if nonexistant)]',

@@ -3,7 +3,6 @@ const Discord = require('discord.js');
 
 module.exports = {
 	name: 'hitler',
-	guildOnly: false,
 	description: 'Worse than Hitler.',
 	usage: '[@user (returns your avatar if nonexistant)]',
 	emoji: ':flag_de:',
