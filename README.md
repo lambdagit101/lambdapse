@@ -5,3 +5,4 @@ Multi-purpose Discord Bot
 - "Emotes" (hug, kiss, slap, pat)
 - hentai
 - Highly customizable? I have no idea
+- Oh yeah we also have leveling MEE6 style you can change that in the leveling module
