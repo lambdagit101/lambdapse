@@ -43,7 +43,6 @@ for (const folder of commandFoldersForHelp) {
  	let embed = new Discord.MessageEmbed()
 		.setTitle('Help')
 		.setColor(require('./messages.json').embed_color)
-		.setTimestamp()
 	const commandFiles = fs.readdirSync(`./commands/${folder}`);
 	data.push(`**${path.basename(folder)}**`);
 	for (const file of commandFiles) {
