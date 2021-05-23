@@ -22,7 +22,7 @@
     "canvacord": "^5.2.0",
     "colors": "^1.4.0",
     "discord-player": "^4.0.5",
-    "discord-together": "^1.1.1",
+    "discord-together": "^1.1.11",
     "discord-xp": "^1.1.14",
     "discord.js": "^12.5.3",
     "discord.js-pagination-fork": "^1.0.8",
