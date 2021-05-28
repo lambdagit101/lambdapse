@@ -21,6 +21,7 @@
     "@discordjs/opus": "^0.4.0",
     "canvacord": "^5.2.0",
     "colors": "^1.4.0",
+    "discord-buttons": "^2.4.1",
     "discord-player": "^4.0.5",
     "discord-together": "^1.1.11",
     "discord-xp": "^1.1.14",

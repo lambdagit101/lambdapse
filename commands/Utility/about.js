@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const { MessageButton } = require('discord-buttons');
 
 module.exports = {
 	name: 'about',
@@ -12,6 +13,10 @@ module.exports = {
 			.setFooter(require('../../messages.json').embed_footer.replace('(NAME)', message.author.username), message.author.avatarURL())
 			.setTitle(require('../../messages.json').credits_title.replace('(NAME)', require('../../messages.json').bot_name))
 			.setDescription(`**${require('../../messages.json').credits_madeby.replace('(NAME)', require('../../messages.json').bot_owner_username)}**\n**${require('../../messages.json').credits_specialthanksto.replace('(THANKS)', require('../../messages.json').credits_thanks.join(", "))}**\n${require('../../messages.json').credits_extramessage || ''}`)
-		message.channel.send(embed);
+		let button = new MessageButton()
+			.setStyle('url')
+			.setLabel('Website')
+			.setID(`[Website](${require('../../messages.json').bot_website})`);
+		message.channel.send({ button: button, embed: embed });
 	},
 };
