@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-const { MessageButton } = require('discord-buttons')(client);
 
 module.exports = {
 	name: 'about',
@@ -7,6 +6,7 @@ module.exports = {
 	description: 'Credits, support information, etc.',
 	emoji: ':bread:',
 	async execute(client, message, args) {
+		const { MessageButton } = require('discord-buttons')(client);
 		const embed = new Discord.MessageEmbed()
 			.setColor(require('../../messages.json').embed_color)
 			.setTimestamp()
