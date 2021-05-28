@@ -30,6 +30,7 @@
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.3.0",
     "irc": "^0.5.2",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "ytdl-core": "^4.8.2"
   }
 }
