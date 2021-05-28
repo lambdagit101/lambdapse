@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const { MessageButton } = require('discord-buttons');
+const { MessageButton } = require('discord-buttons')(client);
 
 module.exports = {
 	name: 'about',
