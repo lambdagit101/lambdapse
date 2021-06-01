@@ -9,6 +9,7 @@ const messages = require('./messages.json');
 // Actual client
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
+const disbut = require('discord-buttons')(client);
 
 // Exports the client so modules can access it
 module.exports.client = client;
