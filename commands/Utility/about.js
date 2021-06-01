@@ -16,8 +16,7 @@ module.exports = {
 		const button = new MessageButton()
 	  	.setStyle('url')
 	  	.setURL(require('../../messages.json').bot_website)
-	  	.setLabel('Website')
-	  	.setDisabled();
+	  	.setLabel('Website');
 		message.channel.send({ button: button, embed: embed });
 	},
 };
