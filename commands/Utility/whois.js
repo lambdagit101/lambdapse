@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const fetch = require('node-fetch');
+const { MessageButton } = require('discord-buttons');
 
 module.exports = {
   name: 'whois',
@@ -43,6 +44,10 @@ module.exports = {
         } else if (whois.hosting == true) {
           embed.addFields({ name: 'Additional information', value: 'This is a hosting service/datacenter IP' })
         }
-    message.channel.send(embed);
+    const button = new MessageButton()
+      .setStyle('url')
+      .setURL(`https://iknowwhatyoudownload.com/en/peer/?ip=${whois.query}`)
+      .setLabel('Torrent History');
+    message.channel.send({ button: button, embed: embed });
   },
 };
