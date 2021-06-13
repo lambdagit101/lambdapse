@@ -32,7 +32,7 @@ Levels.setURL(process.env.LEVEL_DBURL);
 module.exports.Levels = Levels;
 const client = require('../shard.js').client;
 
-await mongodb.connect();
+mongodb.connect();
 
 const mongodb = new MongoClient(process.env.LEVEL_DBURL, {
   useNewUrlParser: true,
