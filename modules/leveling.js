@@ -32,14 +32,19 @@ Levels.setURL(process.env.LEVEL_DBURL);
 module.exports.Levels = Levels;
 const client = require('../shard.js').client;
 
-mongodb.connect();
+async function run() {
+  await mongodb.connect();
 
-const mongodb = new MongoClient(process.env.LEVEL_DBURL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+  const mongodb = new MongoClient(process.env.LEVEL_DBURL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
 
-module.exports.database = mongodb;
+  module.exports.database = mongodb;
+}
+
+run();
+
 
 client.on("message", async (message) => {
   if (!message.guild) return;
