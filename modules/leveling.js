@@ -9,10 +9,6 @@ const messagewhen = false;
 // Message that will be sent when someone levels up (does not matter if above is false)
 const theactualmessage = '**(TAG)**, you have advanced to level **(LEVEL)**!';
 
-// Should the message when you got XP be sent in the same channel or a specific one? Not required if above is false
-const sendtochannel = false;
-const channelid = "required if above is true";
-
 // The Minimum and Maximum amount of XP someone can get per message
 const minxp = 15;
 const maxxp = 25;
@@ -26,6 +22,7 @@ const mee6cooldown = 60000;
 
 // Do not touch the things below
 
+const { MongoClient } = require("mongodb");
 const colors = require('colors');
 module.exports.enabled = enabled;
 if (!enabled) return console.log('[INFO]'.blue + ' Leveling module is ' + 'DISABLED'.red);
@@ -34,6 +31,15 @@ const Levels = require("discord-xp");
 Levels.setURL(process.env.LEVEL_DBURL);
 module.exports.Levels = Levels;
 const client = require('../shard.js').client;
+
+await mongodb.connect();
+
+const mongodb = new MongoClient(process.env.LEVEL_DBURL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+module.exports.database = mongodb;
 
 client.on("message", async (message) => {
   if (!message.guild) return;
@@ -45,11 +51,18 @@ client.on("message", async (message) => {
     const randomAmountOfXp = Math.floor(Math.random() * (maxxp - minxp) + minxp);
     const hasLeveledUp = await Levels.appendXp(message.author.id, message.guild.id, randomAmountOfXp);
     if (hasLeveledUp) {
-      const user = await Levels.fetch(message.author.id, message.guild.id);
-      if (messagewhen) {
-        if (!sendtochannel) return message.channel.send(theactualmessage.replace('(TAG)', message.author.tag).replace('(LEVEL)', user.level));
-        const channel = client.channels.cache.get(channelid);
-        channel.send(theactualmessage.replace('(TAG)', message.author.tag).replace('(LEVEL)', user.level));
+      const based = database.db('leveling');
+      const preferences = based.collection('preferences');
+      const query = { userid: message.author.id, setting: 'levelmsg' };
+      const where = await preferences.findOne(query);
+      if (where.where == 'dm') {
+        return message.author.send(theactualmessage.replace('(TAG)', message.author.tag).replace('(LEVEL)', user.level));
+      } else if (where.where == 'channel') {
+        return message.channel.send(theactualmessage.replace('(TAG)', message.author.tag).replace('(LEVEL)', user.level));
+      } else if (where.where == 'hide') {
+        return;
+      } else {
+        return message.channel.send(theactualmessage.replace('(TAG)', message.author.tag).replace('(LEVEL)', user.level) + '\n**Wanna hide these messages? Do **`lb!preference levelmsg hide`**');
       }
     }
     setTimeout(function() {

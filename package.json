@@ -19,6 +19,7 @@
   "repository": "https://github.com/lambdagit101/lambdapse",
   "dependencies": {
     "@discordjs/opus": "^0.4.0",
+    "bufferutil": "^4.0.3",
     "canvacord": "^5.2.0",
     "colors": "^1.4.0",
     "discord-buttons": "^2.4.1",
@@ -29,8 +30,8 @@
     "discord.js-pagination-fork": "^1.0.8",
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.3.0",
-    "irc": "^0.5.2",
     "node-fetch": "^2.6.1",
+    "utf-8-validate": "^5.0.5",
     "ytdl-core": "^4.8.2"
   }
 }

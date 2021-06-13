@@ -1,6 +1,8 @@
 module.exports.name = 'Discord-IRC Integration';
 
 // Lambdapse Discord-IRC Integration
+// This requires package irc from npm
+// So first you have to install that before setting this up
 // If you want to link other channels on both ends, make a copy of this file, and make sure to change the Discord channel ID
 
 // Discord-related stuff

@@ -22,6 +22,7 @@ module.exports = {
 				.setRank(0, "", false)
 				.setStatus(target.presence.status)
 				.setUsername(target.username)
+				.renderEmojis(true)
 				.setDiscriminator(target.discriminator);
 		rank.build()
 				.then(data => {
