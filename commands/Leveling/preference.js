@@ -24,8 +24,8 @@ module.exports = {
 										setting: 'levelmsg',
 										where: 'dm',
 									};
-									const based = database.db('leveling');
-    							const preferences = based.collection('preferences');
+									const based3 = database.db('leveling');
+    							const preferences = based3.collection('preferences');
 									await preferences.insertOne(msgpref1);
 									return message.channel.send(require('../../messages.json').level_preferenceset + 'DMs');
 								break;
@@ -35,8 +35,8 @@ module.exports = {
 										setting: 'levelmsg',
 										where: 'channel',
 									};
-									const based = database.db('leveling');
-									const preferences = based.collection('preferences');
+									const based2 = database.db('leveling');
+									const preferences = based2.collection('preferences');
 									await preferences.insertOne(msgpref2);
 									return message.channel.send(require('../../messages.json').level_preferenceset + 'Message sent in the same channel');
 								break;
@@ -50,8 +50,8 @@ module.exports = {
 								setting: 'levelmsg',
 								where: 'hide',
 							};
-							const based = database.db('leveling');
-							const preferences = based.collection('preferences');
+							const based1 = database.db('leveling');
+							const preferences = based1.collection('preferences');
 							await preferences.insertOne(msgpref3);
 							return message.channel.send(require('../../messages.json').level_preferenceset + 'Hidden Level Message');
 						break;
