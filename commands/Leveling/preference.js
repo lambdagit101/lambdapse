@@ -19,25 +19,25 @@ module.exports = {
 						case 'show':
 							switch(args[2]) {
 								case 'dm':
-									const msgpref = {
+									const msgpref1 = {
 										userid: message.author.id,
 										setting: 'levelmsg',
 										where: 'dm',
 									};
 									const based = database.db('leveling');
     							const preferences = based.collection('preferences');
-									await preferences.insertOne(msgpref);
+									await preferences.insertOne(msgpref1);
 									return message.channel.send(require('../../messages.json').level_preferenceset + 'DMs');
 								break;
 								case 'channel':
-									const msgpref = {
+									const msgpref2 = {
 										userid: message.author.id,
 										setting: 'levelmsg',
 										where: 'channel',
 									};
 									const based = database.db('leveling');
 									const preferences = based.collection('preferences');
-									await preferences.insertOne(msgpref);
+									await preferences.insertOne(msgpref2);
 									return message.channel.send(require('../../messages.json').level_preferenceset + 'Message sent in the same channel');
 								break;
 								default:
@@ -45,14 +45,14 @@ module.exports = {
 							}
 						break;
 						case 'hide':
-							const msgpref = {
+							const msgpref3 = {
 								userid: message.author.id,
 								setting: 'levelmsg',
 								where: 'hide',
 							};
 							const based = database.db('leveling');
 							const preferences = based.collection('preferences');
-							await preferences.insertOne(msgpref);
+							await preferences.insertOne(msgpref3);
 							return message.channel.send(require('../../messages.json').level_preferenceset + 'Hidden Level Message');
 						break;
 						default:
