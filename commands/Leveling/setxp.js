@@ -2,15 +2,15 @@ const Discord = require('discord.js');
 const { Levels, enabled } = require('../../modules/leveling.js');
 
 module.exports = {
-	name: 'setlevel',
-	description: 'Allows server administrators to change a user\'s level.',
+	name: 'setxp',
+	description: 'Allows server administrators to change a user\'s XP.',
 	permissions: 'ADMINISTRATOR',
 	emoji: ':gem:',
-	usage: '[@user] [level]',
+	usage: '[@user] [xp]',
 	guildOnly: true,
 	async execute(client, message, args) {
 		if (!enabled) return message.channel.send(require('../../messages.json').level_disabled);
 		if (!message.mentions.members.first()) return message.channel.send('cock');
-		Levels.setLevel(message.mentions.members.first().id, message.guild.id, args[1]);
+		Levels.setXp(message.mentions.members.first().id, message.guild.id, args[1]);
 	},
 };

@@ -73,13 +73,13 @@ client.on('message', async (message) => {
 	if (!command) return;
 
 	if (command.guildOnly && message.channel.type === 'dm') {
-		return message.reply(messages.bot_nodms);
+		return message.channel.send(messages.bot_nodms);
 	}
 
 	if (command.permissions) {
 		const authorPerms = message.channel.permissionsFor(message.author);
 		if (!authorPerms || !authorPerms.has(command.permissions)) {
-			return message.reply(messages.bot_noperms);
+			return message.channel.send(messages.bot_noperms);
 		}
 	}
 
