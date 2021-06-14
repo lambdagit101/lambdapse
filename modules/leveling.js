@@ -22,7 +22,6 @@ const mee6cooldown = 60000;
 
 // Do not touch the things below
 
-const { MongoClient } = require("mongodb");
 const colors = require('colors');
 module.exports.enabled = enabled;
 if (!enabled) return console.log('[INFO]'.blue + ' Leveling module is ' + 'DISABLED'.red);
@@ -31,20 +30,6 @@ const Levels = require("discord-xp");
 Levels.setURL(process.env.LEVEL_DBURL);
 module.exports.Levels = Levels;
 const client = require('../shard.js').client;
-
-async function run() {
-  await mongodb.connect();
-
-  const mongodb = new MongoClient(process.env.LEVEL_DBURL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-
-  module.exports.database = mongodb;
-}
-
-run();
-
 
 client.on("message", async (message) => {
   if (!message.guild) return;
@@ -56,19 +41,7 @@ client.on("message", async (message) => {
     const randomAmountOfXp = Math.floor(Math.random() * (maxxp - minxp) + minxp);
     const hasLeveledUp = await Levels.appendXp(message.author.id, message.guild.id, randomAmountOfXp);
     if (hasLeveledUp) {
-      const based = database.db('leveling');
-      const preferences = based.collection('preferences');
-      const query = { userid: message.author.id, setting: 'levelmsg' };
-      const where = await preferences.findOne(query);
-      if (where.where == 'dm') {
-        return message.author.send(theactualmessage.replace('(TAG)', message.author.tag).replace('(LEVEL)', user.level));
-      } else if (where.where == 'channel') {
-        return message.channel.send(theactualmessage.replace('(TAG)', message.author.tag).replace('(LEVEL)', user.level));
-      } else if (where.where == 'hide') {
-        return;
-      } else {
-        return message.channel.send(theactualmessage.replace('(TAG)', message.author.tag).replace('(LEVEL)', user.level) + '\n**Wanna hide these messages? Do **`lb!preference levelmsg hide`**');
-      }
+      return;
     }
     setTimeout(function() {
       message.member.cooldown = false;
