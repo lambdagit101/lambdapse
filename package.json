@@ -32,6 +32,6 @@
     "ffmpeg-static": "^4.3.0",
     "node-fetch": "^2.6.1",
     "utf-8-validate": "^5.0.5",
-    "ytdl-core": "^4.8.2"
+    "ytdl-core": "^4.8.3"
   }
 }
