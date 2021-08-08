@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const Discord = require('discord.js, discord-buttons');
 
 module.exports = {
   name: 'fish',
