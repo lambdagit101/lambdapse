@@ -12,7 +12,7 @@ module.exports = {
     client.discordTogether.createTogetherCode(message.member.voice.channelID, 'poker').then(async invite => {
       const embed = new Discord.MessageEmbed()
         .setTitle('Discord Poker Night')
-        .setColor(#7289da)
+        .setColor('#7289da')
         //.setFooter(require('../../messages.json').embed_footer.replace('(NAME)', message.author.username), message.author.avatarURL())
         //.setTimestamp()
         .setDescription('**Click the button below to start**')
@@ -20,7 +20,6 @@ module.exports = {
         .setStyle('url')
         .setURL(${invite.code}) 
         .setLabel('Poker'); 
-        
       return message.channel.send(embed, button);
     });
   },
