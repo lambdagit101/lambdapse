@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const Discord = require('discord.js, discord-button');
 
 module.exports = {
   name: 'poker',
@@ -12,11 +12,16 @@ module.exports = {
     client.discordTogether.createTogetherCode(message.member.voice.channelID, 'poker').then(async invite => {
       const embed = new Discord.MessageEmbed()
         .setTitle('Discord Poker Night')
-        .setColor(require('../../messages.json').embed_color)
-        .setFooter(require('../../messages.json').embed_footer.replace('(NAME)', message.author.username), message.author.avatarURL())
-        .setTimestamp()
-        .setDescription(`**[${require('../../messages.json').activity_clickhere}](${invite.code})**`)
-      return message.channel.send(embed);
+        .setColor(#7289da)
+        //.setFooter(require('../../messages.json').embed_footer.replace('(NAME)', message.author.username), message.author.avatarURL())
+        //.setTimestamp()
+        .setDescription('**Click the button below to start**')
+      let button = new MessageButton()
+        .setStyle('url')
+        .setURL(${invite.code}) 
+        .setLabel('Poker'); 
+        
+      return message.channel.send(embed, button);
     });
   },
 };
