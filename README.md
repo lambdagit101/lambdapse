@@ -1,5 +1,6 @@
 # Lambdapse forked
 Lambdapse (aka dahon bot) is a Hentai and Discord Activity Bot
+
 Current Features:
 - Hentai
 - Discord Activities
