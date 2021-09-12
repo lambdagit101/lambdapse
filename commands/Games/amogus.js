@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const { MessageButton } = require('discord-buttons');
 
 module.exports = {
-  name: 'amongus clone',
+  name: 'amongus',
   guildOnly: true,
   aliases: ['betrayal, amongus, amogus'],
   description: 'Sus.',
